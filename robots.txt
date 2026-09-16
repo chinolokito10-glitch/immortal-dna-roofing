@@ -1,0 +1,3 @@
+# Preview: allow indexing only after real company details are approved.
+User-agent: *
+Disallow: /

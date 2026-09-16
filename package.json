@@ -1,0 +1,19 @@
+{
+  "name": "toiture-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node scripts/build.js",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node tests/browser.js"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "playwright": "^1.51.1",
+    "prettier": "^3.9.6",
+    "sharp": "^0.35.4"
+  }
+}

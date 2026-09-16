@@ -1,0 +1,87 @@
+          <form id="estimate-form" action="/api/estimates" method="post">
+            <h3>Décrivez votre projet</h3>
+            <p>Indiquez la ville, le problème observé et vos coordonnées.</p>
+            <div class="form-grid">
+              <label
+                >Nom complet<input
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Votre nom"
+                  required
+                  maxlength="100" /></label
+              ><label
+                >Téléphone<input
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="Votre numéro"
+                  required
+                  pattern="[+0-9 .()\-]{7,25}"
+                  maxlength="25" /></label
+              ><label
+                >Courriel<input
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="vous@exemple.ca"
+                  required
+                  maxlength="254" /></label
+              ><label
+                >Ville<input
+                  name="city"
+                  autocomplete="address-level2"
+                  placeholder="Votre ville"
+                  required
+                  maxlength="100" /></label
+              ><label class="full"
+                >Votre projet<select name="service" required>
+                  <option value="">Sélectionnez un service</option>
+                  {{SERVICE_OPTIONS}}
+                  <option value="Not sure yet">
+                    J’aimerais être conseillé
+                  </option>
+                </select></label
+              ><label class="full"
+                >Quelques mots sur votre toiture <span>(facultatif)</span
+                ><textarea
+                  name="message"
+                  rows="3"
+                  maxlength="3000"
+                  placeholder="Une infiltration, une toiture vieillissante, un nouveau projet…"
+                ></textarea></label
+              ><label class="honeypot" aria-hidden="true"
+                >Ne pas remplir<input
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off" /></label
+              ><label class="consent full"
+                ><input type="checkbox" name="consent" required /><span
+                  >J’accepte d’être contacté au sujet de ma demande et j’ai lu
+                  la
+                  <button
+                    type="button"
+                    class="inline-link"
+                    data-legal="privacy"
+                  >
+                    politique de confidentialité</button
+                  >.</span
+                ></label
+              ><button class="button full" type="submit">
+                Demander une soumission <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+            <p class="form-note">
+              Vos renseignements servent uniquement à répondre à votre demande.
+            </p>
+            <p id="form-status" role="status" tabindex="-1"></p>
+            <button
+              class="text-link"
+              id="download-request"
+              type="button"
+              hidden
+            >
+              Télécharger ma demande ↓</button
+            ><noscript
+              >Activez JavaScript pour utiliser ce formulaire.</noscript
+            >
+          </form>
