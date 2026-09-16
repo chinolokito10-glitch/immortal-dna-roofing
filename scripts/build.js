@@ -5,6 +5,12 @@ import { renderSite } from "./render-site.js";
 import { metadata, robots, sitemap } from "./metadata.js";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 await mkdir(path.join(root, "dist/assets"), { recursive: true });
+// Static hosting has no lead-delivery server. Preserve the downloadable demo form.
+await mkdir(path.join(root, "dist/api"), { recursive: true });
+await writeFile(
+  path.join(root, "dist/api/config.json"),
+  JSON.stringify({ estimatesEnabled: false }),
+);
 const origin = process.env.PUBLIC_ORIGIN || "";
 const html = renderSite();
 await writeFile(path.join(root, "index.html"), html);

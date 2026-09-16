@@ -35,7 +35,14 @@ npm run test:browser
 
 `dist/` contient le site statique. Les tests vérifient le backend, la séparation entre données manquantes et preuves confirmées, le téléphone, le rendu de dossiers réels, le SEO, cinq tailles d’écran, l’accessibilité et le téléchargement d’une demande non envoyée.
 
-## Réception des demandes
+## Vercel
+
+`vercel.json` builds the site with `npm run build` and serves `dist/` as static files.
+The `/api/config` route serves the static form configuration. On Vercel, requests
+remain downloadable demo requests; delivery requires the separately configured
+Node server described below.
+
+## Réception des demandes (serveur Node)
 
 Variables serveur, décrites dans `.env.example` :
 
